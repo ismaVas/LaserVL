@@ -21,7 +21,8 @@ namespace LaserVL
         {
             InitializeComponent();
             laserConfigs = LaserConfigs.LoadLaserConfigs(Path.Combine("config", "LaserConfigs.xml"));
-            
+            TryConnection();
+
         }
 
 
@@ -33,7 +34,9 @@ namespace LaserVL
                 this.stream = connexion.GetStream();
                 return true;
             }
-            catch { }
+            catch { 
+                LogTextBox.Text = "No connexion";
+            }
             return false;
         }
 
