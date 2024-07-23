@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LaserConfigs>
+	<IpAddress>192.168.0.10</IpAddress>
+	<Port>10001</Port>
+	<BaudRate>9600</BaudRate>
+	<DataBit>8</DataBit>
+	<StopBit>1</StopBit>
+	<ParityBit>false</ParityBit>
+	<ControlFlow>false</ControlFlow>
+	<Commands>
+		<Command Name="AimingBeamOFF" Send="ABF\r" Return="ABF\r" />
+		<Command Name="AimingBeamON" Send="ABN\r" Return="ABN\r" />
+		<Command Name="DisableExternalAimingBeamControl" Send="DEABC\r" Return="DEABC\r" />
+		<Command Name="EnableExternalAimingBeamControl" Send="EEABC\r" Return="EEABC\r" />
+		<Command Name="DisableExternalControl" Send="DEC\r" Return="DEC\r" />
+		<Command Name="EnableExternalControl" Send="EEC\r" Return="EEC\r" />
+		<Command Name="DisableHardwareEmissionControl" Send="DLE\r" Return="DLE\r" />
+		<Command Name="EnableHardwareEmissionControl" Send="ELE\r" Return="ELE\r" />
+		<Command Name="StopEmission" Send="EMOFF\r" Return="EMOFF\r" />
+		<Command Name="StartEmission" Send="EMON\r" Return="EMON\r" />
+		<Command Name="MainPowerOff" Send="MPWROFF\r" Return="MPWROFF\r" />
+		<Command Name="MainPowerON" Send="MPWROFF\r" Return="MPWRON\r" />
+		<Command Name="SetPulseWidth" Send="SPW 100\r" Return="SPW:100\r" />
+		<Command Name="SetPulseRepetitionRate" Send="SPRR 1000\r" Return="SPRR: 1000\r" />
+		<Command Name="SetDiodeCurrent" Send="SDC 100\r" Return="SDC: 100\r" />
+		<Command Name="ReadCurrentSetPoint" Send="RCS\r" Return="RCS: 56.7\r" />
+		<Command Name="ReadPulseRepitionRate" Send="RPRR\r" Return="RPRR:10\r" />
+		<Command Name="ReadBoardTemperature" Send="RBT\r" Return="RBT:36.6\r" />
+		<Command Name="ReadPulseWidth" Send="RPW\r" Return="RPW:5.5\r" />
+		<Command Name="ReadLaserTemperature" Send="RCT\r" Return="RCT:34.5\r" />
+		<Command Name="ResetErrors" Send="PERR\r" Return="PERR\r" />
+		<Command Name="SetUpTime" Send="SUT 50\r" Return="SUT:50\r" />
+		<Command Name="SetDownTime" Send="SDT 50\r" Return="SDT:50\r" />
+		<Command Name="ReadUpTime" Send="RUT\r" Return="RUT:50\r" />
+		<Command Name="ReadDownTime" Send="RDT\r" Return="RDT:50\r" />
+		<Command Name="ProgramStart" Send="PSRT 1\r" Return="PSRT:1\r" />
+		<Command Name="ProgramStop" Send="PSTP 1\r" Return="PSTP:1\r" />
+		<Command Name="EnableCalibrationMode" Send="ECM\r" Return="ECM\r" />
+		<Command Name="DisableCalibrationMode" Send="DCM\r" Return="DCM\r" />
+		<Command Name="CommandError" Send="BGM\r" Return="Command Err!\r" />
+		<Command Name="ReadDeviceStatus" Send="STA" Return="STA::4100" />
+		
+	</Commands>
+	<Errors>
+		<Error Code="ERR: input Err" Description="Input pulse width &lt; 0.0001" />
+		<Error Code="ERR: Out of Range" Description="Pulse width exceeds the maximum allowed value" />
+		<Error Code="ERR: Duty Cycle too High" Description="Duty cycle exceeds the allowed maximum" />
+		<Error Code="ERR: Duty Cycle too Low" Description="Duty cycle is below the allowed minimum" />
+	</Errors>
+
+	<StatusBits>
+		<bit position="0" disable="normal operation" enable="Authorization time"/>
+		<bit position="1" disable="normal" enable="Temperature too high"/>
+		<bit position="2" disable="emission off" enable="emission on or in preparation"/>
+		<bit position="3" disable="No high reflection" enable="High reflection Abnormal"/>
+		<bit position="4" disable="External AD off" enable="External AD on"/>
+		<bit position="5" disable="Power connection off" enable="Power connection on"/>
+		<bit position="6" disable="normal" enable="sub-controling commuication abnormal"/>
+		<bit position="7" disable="normal" enable="sub-modual abnormal"/>
+		<bit position="8" disable="Guide red light off" enable="Guide red light on"/>
+		<bit position="9" disable="the lase is not ready" enable="the laser is ready"/>
+		<bit position="10" disable="QWC off" enable="QWC on"/>
+		<bit position="11" disable="Module main power off" enable="module main power on"/>
+		<bit position="12" disable="Modulation off" enable="modulation on"/>
+		<bit position="13" disable="normal" enable="leakage sensor 1 leaking"/>
+		<bit position="14" disable="normal" enable="leakage sensor 2 leaking"/>
+		<bit position="15" disable="No laser" enable="laser is power on"/>
+		<bit position="16" disable="Gate mode off" enable="Gate mode on"/>
+		<bit position="17" disable="AC input normal" enable="AC input abnormal"/>
+		<bit position="18" disable="External Emission control off" enable="External Emission control on"/>
+		<bit position="19" disable="normal" enable="Laser fault"/>
+		<bit position="20" disable="Slow up slow down mode of" enable="Slow up slow down mode"/>
+		<bit position="21" disable="A laser operates in ON mode" enable="A laser operates in REM mode"/>
+		<bit position="22" disable="Wave mode of" enable="Wave mode on"/>
+		<bit position="23" disable="Surge protector normal" enable="Serge protector failure"/>
+		<bit position="24" disable="normal" enable="Low temperature fault"/>
+		<bit position="25" disable="normal" enable="Humidity alarm"/>
+		<bit position="26" disable="normal" enable="Water flow meter 1 Flow Alarm"/>
+		<bit position="27" disable="Red light internal control" enable="Red Light External Control"/>
+		<bit position="28" disable="normal" enable="Water flow meter"/>
+		<bit position="29" disable="normal" enable="Module locked"/>
+		<bit position="30" disable="Optical circuit safety interlock normal" enable="Optical circuit safety interlock abnormal"/>
+		<bit position="31" disable="normal" enable="High average power"/>
+	</StatusBits>
+</LaserConfigs>
